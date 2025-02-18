@@ -3,10 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # Runs when pushing to main branch
 
 jobs:
   build:
@@ -31,4 +28,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: your-dockerhub-username/my-fastapi-app:latest
+          tags: vansh1306/apitest-app:V3.0
