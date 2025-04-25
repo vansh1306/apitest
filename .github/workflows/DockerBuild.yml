@@ -1,0 +1,14 @@
+name: Docker image build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v1
+      - name: Build & Push Image
+        run: |
+          echo ${{ secrets.DOCKERTOKEN }} | docker login -u "<vansh1306>" --vansh1306-stdin
+          docker build -t <vansh1306>/<main>:latest .
+          docker push <vansh1306>/<main>:latest
